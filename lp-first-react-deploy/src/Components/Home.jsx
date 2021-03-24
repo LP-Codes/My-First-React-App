@@ -14,12 +14,16 @@ const Home = () => {
   useEffect(() => {
     // console.log("onload useefect fired")
     setlpdate(Date());
-    let url1 = "http://ip-api.com/json/";
+    const ipkey="693a05e3434d4a869ba63d38f2a06a5e"
+    let url1 = `https://api.ipgeolocation.io/ipgeo?apiKey=${ipkey}&ip=2401:4900:1aaf:2a7e:298d:9379:fe93:5123`;
+    let myip="https://api.my-ip.io/ip"
+    // let urlm="https://api.ipgeolocationapi.com/geolocate"
 
     let url5 = "https://type.fit/api/quotes";
     fetch(url1)
       .then((res) => res.json())
       .then((data) => {
+        console.log(data);
         setcityname(data.city);
         setstatename(data.regionName);
         const fetchedcity = data.city;
