@@ -15,19 +15,19 @@ const App = () => {
 
         <ul class="navbar-nav">
           <li
-            class="nav-item  font-weight-bolder ml-3 "
+            class="nav-item   ml-3 "
             style={{ fontSize: "25px" }}
           >
             <Link to={"/"}><i class="fas fa-home fa-2x"></i></Link>
           </li>
           <li
-            class="nav-item mr-2 font-weight-bolder ml-3 "
+            class="nav-item  ml-3 "
             style={{ fontSize: "25px" }}
           >
             <Link to={"/randomquotes"}><i class="fab fa-quora fa-2x"></i></Link>
           </li>
           <li
-            class="nav-item mr-2 font-weight-bolder ml-3"
+            class="nav-item   ml-3"
             style={{ fontSize: "25px" }}
           >
             <Link to={"/issuetracker"}><i class="fas fa-bug fa-2x"></i></Link>
@@ -36,10 +36,10 @@ const App = () => {
         <div class="navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <i class="fab fa-node fa-3x text-warning"></i>
+              <i class="fab fa-node fa-2x text-warning"></i>
             </li>
             <li class="nav-item">
-              <i class="fab fa-linux fa-3x text-danger"></i>
+              <i class="fab fa-linux fa-2x text-info"></i>
             </li>
           </ul>
         </div>
