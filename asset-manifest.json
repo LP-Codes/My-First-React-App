@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/lp-first-react-deploy/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/lp-first-react-deploy/static/js/main.99e5d249.chunk.js",
+    "main.js.map": "/lp-first-react-deploy/static/js/main.99e5d249.chunk.js.map",
+    "runtime-main.js": "/lp-first-react-deploy/static/js/runtime-main.b03aae09.js",
+    "runtime-main.js.map": "/lp-first-react-deploy/static/js/runtime-main.b03aae09.js.map",
+    "static/css/2.5363771e.chunk.css": "/lp-first-react-deploy/static/css/2.5363771e.chunk.css",
+    "static/js/2.782352f2.chunk.js": "/lp-first-react-deploy/static/js/2.782352f2.chunk.js",
+    "static/js/2.782352f2.chunk.js.map": "/lp-first-react-deploy/static/js/2.782352f2.chunk.js.map",
+    "static/js/3.62d75e74.chunk.js": "/lp-first-react-deploy/static/js/3.62d75e74.chunk.js",
+    "static/js/3.62d75e74.chunk.js.map": "/lp-first-react-deploy/static/js/3.62d75e74.chunk.js.map",
+    "index.html": "/lp-first-react-deploy/index.html",
+    "static/css/2.5363771e.chunk.css.map": "/lp-first-react-deploy/static/css/2.5363771e.chunk.css.map",
+    "static/css/main.6dea0f05.chunk.css.map": "/lp-first-react-deploy/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.782352f2.chunk.js.LICENSE.txt": "/lp-first-react-deploy/static/js/2.782352f2.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.min.css": "/lp-first-react-deploy/static/media/fontawesome-webfont.f691f37e.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b03aae09.js",
+    "static/css/2.5363771e.chunk.css",
+    "static/js/2.782352f2.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.99e5d249.chunk.js"
+  ]
+}
