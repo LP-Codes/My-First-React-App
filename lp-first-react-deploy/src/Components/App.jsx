@@ -7,7 +7,7 @@ import Home from "./Home";
 
 const App = () => {
   return (
-    <div className="container-fluid">
+    <div>
       <nav class="navbar  navbar-expand bg-dark navbar-dark mb-2">
         <a class="navbar-brand">
           <img src={logo192} alt="logo" style={{ width: "40px" }} />
