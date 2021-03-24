@@ -25,7 +25,7 @@ const Home = () => {
       .then((data) => {
         // console.log(data);
         setcityname(data.city);
-        setstatename(data.regionName);
+        setstatename(data.state_prov);
         const fetchedcity = data.city;
         const apikey = "0926e3715bd414c4bdd946435fb4553d";
         const url4 = `https://api.openweathermap.org/data/2.5/weather?q=${fetchedcity}&appid=${apikey}&units=metric`;
