@@ -4,33 +4,32 @@ import logo192 from "../Images/logo192.png";
 import RandomQuotes from "./RandomQuotes";
 import Issuetracker from "./Issuetracker";
 import Home from "./Home";
+import "./App.css";
 
 const App = () => {
   return (
     <div>
+
       <nav class="navbar  navbar-expand bg-dark navbar-dark mb-2">
         <a class="navbar-brand">
           <img src={logo192} alt="logo" style={{ width: "40px" }} />
         </a>
 
         <ul class="navbar-nav">
-          <li
-            class="nav-item   ml-3 "
-            style={{ fontSize: "25px" }}
-          >
-            <Link to={"/"}><i class="fas fa-home "></i></Link>
+          <li class="nav-item   ml-3 " style={{color:"red"}} >
+            <Link to={"/"}>
+              <i class="fas fa-home fa-2x"></i>
+            </Link>
           </li>
-          <li
-            class="nav-item  ml-3 "
-            style={{ fontSize: "25px" }}
-          >
-            <Link to={"/randomquotes"}><i class="fab fa-quora "></i></Link>
+          <li class="nav-item  ml-3 " >
+            <Link to={"/randomquotes"}>
+              <i class="fab fa-quora fa-2x "></i>
+            </Link>
           </li>
-          <li
-            class="nav-item   ml-3"
-            style={{ fontSize: "25px" }}
-          >
-            <Link to={"/issuetracker"}><i class="fas fa-bug "></i></Link>
+          <li class="nav-item   ml-3" >
+            <Link to={"/issuetracker"}>
+              <i class="fas fa-bug fa-2x"></i>
+            </Link>
           </li>
         </ul>
         <div class="navbar-collapse">

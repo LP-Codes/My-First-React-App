@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./App.css"
 
 const Home = () => {
   const [lpdate, setlpdate] = useState("");
@@ -58,7 +59,7 @@ const Home = () => {
       <div className="row card card-deck">
         <div className="card bg-primary col">
           <div
-            className="card-body text-center font-weight-bolder text-white p-5 "
+            className=" lp card-body text-center font-weight-bolder text-white p-5 "
             id="ip"
             style={{ minHeight: 200 }}
           >
@@ -74,7 +75,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card bg-warning col">
+        <div className=" lp card bg-warning col">
           <div className="card-body text-center p-5 text-secondary" id="ip">
             {/* <!-- location will be displayed using state--> */}
             <h4>
@@ -88,7 +89,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card bg-success col">
+        <div className=" lp card bg-success col">
           <div
             className="card-body text-center p-5"
             id="ip"
@@ -107,7 +108,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="card bg-danger col">
+        <div className=" lp card bg-danger col">
           <div className="card-body text-center p-5" id="ip">
             {/* <!-- date will be displayed --> */}
             <h2>
