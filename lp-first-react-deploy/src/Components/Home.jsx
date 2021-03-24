@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 
 const Home = () => {
-  const [lpdate, setlpdate] = useState("Date");
-  const [cityname, setcityname] = useState("city");
-  const [statename, setstatename] = useState("statename");
-  const [currentweather, setcurrentweather] = useState("weather");
+  const [lpdate, setlpdate] = useState("");
+  const [cityname, setcityname] = useState("");
+  const [statename, setstatename] = useState("");
+  const [currentweather, setcurrentweather] = useState("");
   const [randomquoteauthor, setrandomquoteauthor] = useState("");
   const [randomquote, setrandomquote] = useState("");
 
