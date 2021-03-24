@@ -18,19 +18,19 @@ const App = () => {
             class="nav-item   ml-3 "
             style={{ fontSize: "25px" }}
           >
-            <Link to={"/"}><i class="fas fa-home fa-2x"></i></Link>
+            <Link to={"/"}><i class="fas fa-home "></i></Link>
           </li>
           <li
             class="nav-item  ml-3 "
             style={{ fontSize: "25px" }}
           >
-            <Link to={"/randomquotes"}><i class="fab fa-quora fa-2x"></i></Link>
+            <Link to={"/randomquotes"}><i class="fab fa-quora "></i></Link>
           </li>
           <li
             class="nav-item   ml-3"
             style={{ fontSize: "25px" }}
           >
-            <Link to={"/issuetracker"}><i class="fas fa-bug fa-2x"></i></Link>
+            <Link to={"/issuetracker"}><i class="fas fa-bug "></i></Link>
           </li>
         </ul>
         <div class="navbar-collapse">
