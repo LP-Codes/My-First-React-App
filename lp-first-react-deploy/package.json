@@ -6,7 +6,7 @@
     "npm": "6.14.11",
     "node": "12.21.0"
   },
-  "homepage": "https://LP-Codes.github.io/lp-first-react-deploy",
+  "homepage": "https://lp-codes.github.io/My-First-React-App/",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
