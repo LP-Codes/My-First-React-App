@@ -14,7 +14,7 @@ const Home = () => {
   useEffect(() => {
     // console.log("onload useefect fired")
     setlpdate(Date());
-    let url1 = "http://ip-api.com/json/";
+    let url1 = "https://ip-api.com/json/";
 
     let url5 = "https://type.fit/api/quotes";
     fetch(url1)
