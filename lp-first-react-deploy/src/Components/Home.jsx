@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./App.css"
+import "./App.css";
+import Youtube from "./Youtube";
 
 const Home = () => {
   const [lpdate, setlpdate] = useState("");
@@ -15,16 +16,16 @@ const Home = () => {
   useEffect(() => {
     // console.log("onload useefect fired")
     setlpdate(Date());
-    const ipkey="693a05e3434d4a869ba63d38f2a06a5e"
-    let url1 = `https://api.ipgeolocation.io/ipgeo?apiKey=${ipkey}&ip=2401:4900:1aaf:2a7e:298d:9379:fe93:5123`;
-    // let myip="https://api.my-ip.io/ip"
+    // const ipkey = "693a05e3434d4a869ba63d38f2a06a5e";
+    // let url1 = `https://api.ipgeolocation.io/ipgeo?apiKey=${ipkey}&ip=2401:4900:1aaf:2a7e:298d:9379:fe93:5123`;
+    let myip="https://get.geojs.io/v1/ip/geo.json"
     // let urlm="https://api.ipgeolocationapi.com/geolocate"
 
     let url5 = "https://type.fit/api/quotes";
-    fetch(url1)
+    fetch(myip)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setcityname(data.city);
         setstatename(data.state_prov);
         const fetchedcity = data.city;
@@ -33,7 +34,6 @@ const Home = () => {
         fetch(url4)
           .then((res) => res.json())
           .then((data) => {
-           
             // console.log(data.main.temp);
             setcurrentweather(data.main.temp);
           });
@@ -125,7 +125,9 @@ const Home = () => {
             <h4 className="font-weight-bolder text-white">{randomquote}</h4>
           </div>
         </div>
+      
       </div>
+      <Youtube></Youtube>
     </div>
   );
 };
