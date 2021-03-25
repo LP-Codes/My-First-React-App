@@ -1,0 +1,11 @@
+input:hover {
+  background-color: rgb(190, 187, 189);
+}
+
+button:hover {
+  background-color: rgb(68, 197, 9);
+}
+button{
+background-color: orange;
+color:rgb(15, 20, 92)
+}
