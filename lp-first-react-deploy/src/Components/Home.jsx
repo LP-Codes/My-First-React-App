@@ -25,9 +25,9 @@ const Home = () => {
     fetch(myip)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setcityname(data.city);
-        setstatename(data.state_prov);
+        setstatename(data.region);
         const fetchedcity = data.city;
         const apikey = "0926e3715bd414c4bdd946435fb4553d";
         const url4 = `https://api.openweathermap.org/data/2.5/weather?q=${fetchedcity}&appid=${apikey}&units=metric`;
@@ -108,13 +108,13 @@ const Home = () => {
           </div>
         </div>
 
-        <div className=" lp card bg-danger col">
+        <div className=" lp card bg-danger col text-white-50">
           <div className="card-body text-center p-5" id="ip">
             {/* <!-- date will be displayed --> */}
             <h2>
               {" "}
               <i
-                className="fa fa-users fa-2x text-white"
+                className="fa fa-users fa-2x "
                 aria-hidden="true"
               ></i>
             </h2>
