@@ -6,7 +6,7 @@ const Youtube = () => {
     <div style={{backgroundColor:"hsl(0, 0%, 70%)"}}>
       <hr></hr>
       <h2 className="text-center bg-info text-white ">
-        Relaxing Music to rejuvenate your mind and body
+      <i class="fas fa-music"></i> Relaxing Music to rejuvenate your mind and body <i class="fas fa-music"></i>
       </h2>
       <hr></hr>
       <div className="row container-fluid">
