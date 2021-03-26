@@ -24,8 +24,10 @@ const Issuetracker = () => {
   };
   const handeldel=(index) => {
     // console.log(index)
+  
     todos.splice(index, 1);
     setTodos([...todos]);  
+   
     // const newTodos = todos.splice(index, 1);
     // setTodos([...newTodos]); 
 //  how to delete
@@ -40,7 +42,8 @@ const Issuetracker = () => {
 
   return (
       <div>
-        <div class="input-group mb-3">
+        <h1 className="text-center font-weight-bolder alert-info mb-5">Tasks To Do <i class="fas fa-clipboard-list text-success"></i></h1>
+        <div class="input-group mb-3 container">
           <input
             className="form-control border-primary font-weight-bold"
             style={{ height: 60 }}
@@ -59,16 +62,18 @@ const Issuetracker = () => {
               <i class="fas fa-plus-square fa-2x p-2"></i>{" "}
             </button>
           </div>
+       
         </div>
-
         {todos.map((x,index) => (
-          <ol style={{ listStyle: "none" }}>
-            <li className="font-weight-bolder table-bordered" style={{fontSize:20}}>
-              {index + "  . " + x } <i class="fas fa-trash-alt" onClick={()=>handeldel(index)}></i>
+          <ol  style={{ listStyle:"outside" }} className="container">
+            <li className="font-weight-bolder table-bordered text-capitalize alert-secondary " style={{fontSize:30}}>
+              { x } <i class="fas fa-trash-alt  text-danger float-md-right" onClick={()=>handeldel(index)}></i>
             </li>
           </ol>
         ))}
-        for future ref
+
+        
+        {/* for future ref */}
             {/* <div >
         {data.map((user) => (
           <div className="user">{user.id + "  " + user.name 

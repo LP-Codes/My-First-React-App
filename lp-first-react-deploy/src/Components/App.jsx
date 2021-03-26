@@ -27,7 +27,7 @@ const App = () => {
           </li>
           <li class="nav-item   ml-3">
             <Link to={"/issuetracker"}>
-              <i class="fas fa-bug fa-2x"></i>
+            <i class="far fa-list-alt fa-2x"></i>
             </Link>
           </li>
         </ul>
