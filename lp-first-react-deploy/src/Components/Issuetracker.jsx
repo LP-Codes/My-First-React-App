@@ -21,66 +21,82 @@ const Issuetracker = () => {
     setTodos(newTodos);
     // clearing input text
     setValue("");
+  
   };
-  const handeldel=(index) => {
+  const handeldel = (index) => {
     // console.log(index)
-  
+
     todos.splice(index, 1);
-    setTodos([...todos]);  
-   
+    setTodos([...todos]);
+
     // const newTodos = todos.splice(index, 1);
-    // setTodos([...newTodos]); 
-//  how to delete
+    // setTodos([...newTodos]);
+  };
+  const [line, setline] = useState(false);
+  const [ll, setll] = useState(false);
+  const markdone = () => {
+    setline(true);
   
-  }
-// for future ref
-  // const data = [
-  //   { id: 1, name: "John Doe" },
-  //   { id: 2, name: "Victor Wayne" },
-  //   { id: 3, name: "Jane Doe" },
-  // ];
+    // setll(true);
+  };
 
   return (
-      <div>
-        <h1 className="text-center font-weight-bolder alert-info mb-5">Tasks To Do <i class="fas fa-clipboard-list text-success"></i></h1>
-        <div class="input-group mb-3 container">
-          <input
-            className="form-control border-primary font-weight-bold"
-            style={{ height: 60 }}
-            placeholder="Enter Text here"
-            type="text"
-            value={input}
-            onChange={handleInput}
-          />
-          <div class="input-group-append">
-            <button
-              className="input-group-append font-weight-bolder "
-              style={{ fontSize: 20 }}
-              onClick={lp}
-            >
-              {" "}
-              <i class="fas fa-plus-square fa-2x p-2"></i>{" "}
-            </button>
-          </div>
-       
+    <div>
+      <h1 className="text-center font-weight-bolder alert-info mb-5">
+        Tasks To Do <i class="fas fa-clipboard-list text-success"></i>
+      </h1>
+      <div class="input-group mb-3 container">
+        <input
+          className="form-control border-primary font-weight-bold"
+          style={{ height: 60 }}
+          placeholder="Enter Text here"
+          type="text"
+          value={input}
+          onChange={handleInput}
+        />
+        <div class="input-group-append">
+          <button
+            className="input-group-append font-weight-bolder "
+            style={{ fontSize: 20 }}
+            onClick={lp}
+          >
+            {" "}
+            <i class="fas fa-plus-square fa-2x p-2"></i>{" "}
+          </button>
         </div>
-        {todos.map((x,index) => (
-          <ol  style={{ listStyle:"outside" }} className="container">
-            <li className="font-weight-bolder table-bordered text-capitalize alert-secondary " style={{fontSize:30}}>
-              { x } <i class="fas fa-trash-alt  text-danger float-md-right" onClick={()=>handeldel(index)}></i>
-            </li>
-          </ol>
-        ))}
+      </div>
+      {todos.map((x, index) => (
+        <ol style={{ listStyle: "outside" }} className="container">
+          <li
+            className="font-weight-bolder table-bordered text-capitalize alert-secondary "
+            style={{
+              fontSize: 30,
+              textDecoration: line ? "line-through" : "none",
+              backgroundColor: ll ? "Chartreuse" : "none",
+             
+            }}
+          >
+            {x}
+            <i
+              class="fas fa-check-circle float-md-right text-success"
+              onClick={markdone}
+            ></i>{" "}
+            <i
+              class="fas fa-trash-alt  text-danger float-md-right"
+              onClick={() => handeldel(index)}
+            ></i>
+          </li>
+        </ol>
+      ))}
 
-        
-        {/* for future ref */}
-            {/* <div >
+      {/* for future ref */}
+      {/* <div >
         {data.map((user) => (
           <div className="user">{user.id + "  " + user.name 
           }</div>
         ))}
       </div> */}
-      </div>
+    </div>
   );
 };
 
