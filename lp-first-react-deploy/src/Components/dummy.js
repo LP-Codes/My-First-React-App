@@ -1,0 +1,2 @@
+// // jqr
+// $(selector).remove();

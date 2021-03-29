@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Issuetracker.css";
+// import $ from 'jquery';
+// window.jQuery = $;
 
 const Issuetracker = () => {
   const [input, setValue] = useState("");
@@ -21,7 +23,6 @@ const Issuetracker = () => {
     setTodos(newTodos);
     // clearing input text
     setValue("");
-  
   };
   const handeldel = (index) => {
     // console.log(index)
@@ -32,17 +33,27 @@ const Issuetracker = () => {
     // const newTodos = todos.splice(index, 1);
     // setTodos([...newTodos]);
   };
-  const [line, setline] = useState(false);
-  const [ll, setll] = useState(false);
-  const markdone = () => {
-    setline(true);
-  
-    // setll(true);
+  // const [line, setline] = useState(false);
+  // const [ll, setll] = useState(false);
+  const markdone = (e) => {
+    // let c= $("#ll")
+    let tgt = e.target;
+
+    // console.log(tgt);
+    tgt.closest("li").style.backgroundColor = "Chartreuse";
+    tgt.closest("li").style.textDecoration = "line-through";
   };
+  // useEffect(() => {
+  // //   $("#pk").click(function (e) {
+  // //     e.preventDefault();
+  // //     alert('hello');
+  // // })
+  // // }
+  // // )
 
   return (
     <div>
-      <h1 className="text-center font-weight-bolder alert-info mb-5">
+      <h1 id="pk" className="text-center font-weight-bolder alert-info mb-5">
         Tasks To Do <i class="fas fa-clipboard-list text-success"></i>
       </h1>
       <div class="input-group mb-3 container">
@@ -71,14 +82,14 @@ const Issuetracker = () => {
             className="font-weight-bolder table-bordered text-capitalize alert-secondary "
             style={{
               fontSize: 30,
-              textDecoration: line ? "line-through" : "none",
-              backgroundColor: ll ? "Chartreuse" : "none",
-             
+              // textDecoration: line ? "line-through" : "none",
+              // backgroundColor: ll ? "Chartreuse" : "none",
             }}
           >
             {x}
             <i
               class="fas fa-check-circle float-md-right text-success"
+              id="ll"
               onClick={markdone}
             ></i>{" "}
             <i
