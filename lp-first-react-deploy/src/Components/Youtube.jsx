@@ -3,13 +3,13 @@ import "./App.css"
 
 const Youtube = () => {
   return (
-    <div style={{backgroundColor:"hsl(0, 0%, 70%)"}}>
+    <div style={{backgroundColor:"hsl(0, 0%, 70%)"} }>
       <hr></hr>
       <h2 className="text-center bg-info text-white ">
       <i class="fas fa-music"></i> Relaxing Music to rejuvenate your mind and body <i class="fas fa-music"></i>
       </h2>
       <hr></hr>
-      <div className="row container-fluid">
+      <div className="row container-fluid text-center ">
         {" "}
         <div className="  col ">
           <iframe
@@ -17,7 +17,7 @@ const Youtube = () => {
           width="350"
             src="https://www.youtube.com/embed/StVO8lHfzkU"
             title="YouTube video player"
-            frameborder="0"
+            
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>
@@ -27,7 +27,7 @@ const Youtube = () => {
             width="350"
             src="https://www.youtube.com/embed/kRf_JiuG_-E"
             title="YouTube video player"
-            frameborder="0"
+            
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>
@@ -37,8 +37,8 @@ const Youtube = () => {
             width="350"
             src="https://www.youtube.com/embed/8uWXx9SO6fk"
             title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+           
+           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>
         <div className=" col">
@@ -47,7 +47,7 @@ const Youtube = () => {
             width="350"
             src="https://www.youtube.com/embed/K8tMg38vO3E"
             title="YouTube video player"
-            frameborder="0"
+          
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>
@@ -57,7 +57,7 @@ const Youtube = () => {
             width="350"
             src="https://www.youtube.com/embed/SdC1gV2x8mI"
             title="YouTube video player"
-            frameborder="0"
+           
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>
@@ -67,7 +67,7 @@ const Youtube = () => {
             width="350"
             src="https://www.youtube.com/embed/Ap2E0RlLx24"
             title="YouTube video player"
-            frameborder="0"
+           
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           ></iframe>
         </div>

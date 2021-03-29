@@ -9,11 +9,31 @@ const Home = () => {
   const [currentweather, setcurrentweather] = useState("");
   const [randomquoteauthor, setrandomquoteauthor] = useState("");
   const [randomquote, setrandomquote] = useState("");
+  const [fact, setfact] = useState([])
 
   // Only Run Once, on Mount
   // You can pass the special value of empty array [] as a way of saying “only run on mount, and clean up on unmount”. So if we changed our component above to call useEffect like this:
   // using useefect for onload event  return will trigger on exiting
   useEffect(() => {
+    let d = new Date()
+ 
+   let facturl =`https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/${d.getMonth()+1}/${d.getDate()}`
+   fetch(facturl)
+  .then(res => res.json())
+  .then(data => {
+    let fact = data.births.slice(0, 5).map((x,index)=> {
+   
+    
+      return      index+1+" . " + x.text + " - Year "+ x.year +" \n " ;
+    });
+
+    setfact(fact)
+  
+
+       
+   });
+   
+
     // console.log("onload useefect fired")
     setlpdate(Date());
     // const ipkey = "693a05e3434d4a869ba63d38f2a06a5e";
@@ -72,6 +92,8 @@ const Home = () => {
               {" "}
               {lpdate} <i class="fas fa-cog fa-spin"></i>
             </h5>
+            <h5 className="text-warning font-weight-bolder">Born On this Day <i class="fas fa-birthday-cake fa-2x" style={{color:"pink"}}></i></h5>
+            <p>{fact}</p>
           </div>
         </div>
 
