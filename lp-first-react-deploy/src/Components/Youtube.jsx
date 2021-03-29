@@ -3,15 +3,15 @@ import "./App.css"
 
 const Youtube = () => {
   return (
-    <div style={{backgroundColor:"hsl(0, 0%, 70%)"} }>
+    <div style={{backgroundColor:"	hsl(15, 100%, 5%)"} }>
       <hr></hr>
       <h2 className="text-center bg-info text-white ">
       <i class="fas fa-music"></i> Relaxing Music to rejuvenate your mind and body <i class="fas fa-music"></i>
       </h2>
       <hr></hr>
-      <div className="row container-fluid text-center ">
+      <div className="row container-fluid text-center m ">
         {" "}
-        <div className="  col ">
+        <div className="  col mb-4 ">
           <iframe
           height="300"
           width="350"
