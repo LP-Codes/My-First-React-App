@@ -47,7 +47,7 @@ export default function Weather() {
     lpsearch();
   }, [city, lpsearch]);
   return (
-    <div >
+    <div  >
    
       <div className="container-fluid  ">
         <h1 className="text-center alert-primary font-weight-bolder ">
@@ -66,7 +66,7 @@ export default function Weather() {
         <input
           onChange={inputhndl}
           value={city}
-          placeholder="Enter Here"
+          placeholder="Enter City's Name  Here to display weather data"
           className="form-control btn-outline-warning font-weight-bolder mb-3 mt-3"
         ></input>
         {/* <button
