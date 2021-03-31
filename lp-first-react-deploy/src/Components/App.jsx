@@ -28,7 +28,7 @@ const App = () => {
           </li>
           <li className="nav-item  ml-3 ">
             <Link to={"/weather"}>
-              <i className="fab fa-quora fa-2x "></i>
+            <i class="fas fa-cloud-sun fa-2x"></i>
             </Link>
           </li>
           <li className="nav-item   ml-3">

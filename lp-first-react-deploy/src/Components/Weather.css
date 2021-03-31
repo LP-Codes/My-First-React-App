@@ -4,8 +4,19 @@
     left: 50%;
     /* bring your own prefixes */
     transform: translate(-50%, -50%);
-    width: 50vw;
-    height: 40vh;
+    width: 70vw;
+    height: 50vh;
+   
+    
+    border: 15px solid rgb(236, 227, 227);
+    border-style: outset;
+
+   
     
    
   }
+
+.lpg{
+  background-image: url(../Images/Weather-Blog-Image.jpg);
+ 
+}

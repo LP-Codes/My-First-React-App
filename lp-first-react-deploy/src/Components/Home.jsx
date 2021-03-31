@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Youtube from "./Youtube";
-import Clock from 'react-live-clock';
+import Clock from "react-live-clock";
+import { API_KEY } from "./Api";
 
 const Home = () => {
   // const [lpdate, setlpdate] = useState("");
@@ -12,7 +13,7 @@ const Home = () => {
   const [randomquote, setrandomquote] = useState("");
   const [fact, setfact] = useState([]);
   const [icon, seticon] = useState("");
-  const [weathertext, setweathertext] = useState("")
+  const [weathertext, setweathertext] = useState("");
 
   // Only Run Once, on Mount
   // You can pass the special value of empty array [] as a way of saying “only run on mount, and clean up on unmount”. So if we changed our component above to call useEffect like this:
@@ -48,13 +49,12 @@ const Home = () => {
         setcityname(data.city);
         setstatename(data.region);
         const fetchedcity = data.city;
-        const apikey = "0926e3715bd414c4bdd946435fb4553d";
-        const url4 = `https://api.openweathermap.org/data/2.5/weather?q=${fetchedcity}&appid=${apikey}&units=metric`;
+        const url4 = `https://api.openweathermap.org/data/2.5/weather?q=${fetchedcity}&appid=${API_KEY}&units=metric`;
         fetch(url4)
           .then((res) => res.json())
           .then((data) => {
             // console.log(data.weather[0].description);
-            setweathertext(data.weather[0].description)
+            setweathertext(data.weather[0].description);
             seticon(data.weather[0].icon);
             setcurrentweather(data.main.temp);
           });
@@ -91,7 +91,11 @@ const Home = () => {
             </h4>
             <h5>
               {" "}
-              <Clock format={'dddd, DD  MMMM   , YYYY, h:mm:ss'} ticking={true} /> <i class="fas fa-cog fa-spin text-danger"></i>
+              <Clock
+                format={"dddd, DD  MMMM   , YYYY, h:mm:ss"}
+                ticking={true}
+              />{" "}
+              <i class="fas fa-cog fa-spin text-danger"></i>
             </h5>
             <h5 className="text-warning font-weight-bolder ">
               Born On this Day{" "}
@@ -125,23 +129,22 @@ const Home = () => {
             style={{ color: "yellow" }}
           >
             {/* <!-- date will be displayed --> */}
-            <h4>
-            
-            </h4>
+            <h4></h4>
             <h4>
               Current Weather at your location is : {currentweather}{" "}
               <b>
                 <span>&#8451;</span>
               </b>
             </h4>
-            <h5  className="text-capitalize font-weight-bolder"> {weathertext}
-                {" "}
-                <img
-                  src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
-                  alt="icon"
-                  srcset=""
-                />
-              </h5>
+            <h5 className="text-capitalize font-weight-bolder">
+              {" "}
+              {weathertext}{" "}
+              <img
+                src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+                alt="icon"
+                srcset=""
+              />
+            </h5>
           </div>
         </div>
 
