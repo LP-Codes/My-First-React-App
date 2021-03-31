@@ -11,7 +11,7 @@ const Youtube = () => {
       <hr></hr>
       <div className="row container-fluid text-center m ">
         {" "}
-        <div className="  col mb-4 ">
+        <div className="  col mb-4  ">
           <iframe
           height="300"
           width="350"

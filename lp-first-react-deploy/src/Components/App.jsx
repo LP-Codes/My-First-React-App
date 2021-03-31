@@ -3,11 +3,12 @@
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import logo192 from "../Images/logo192.png";
-import RandomQuotes from "./RandomQuotes";
+
 import Issuetracker from "./Issuetracker";
 import Home from "./Home";
 import "./App.css";
-import AndroidOutlinedIcon from '@material-ui/icons/AndroidOutlined';
+import Weather from "./Weather";
+// import AndroidOutlinedIcon from '@material-ui/icons/AndroidOutlined';
 
 const App = () => {
   return (
@@ -26,13 +27,13 @@ const App = () => {
             </Link>
           </li>
           <li className="nav-item  ml-3 ">
-            <Link to={"/randomquotes"}>
+            <Link to={"/weather"}>
               <i className="fab fa-quora fa-2x "></i>
             </Link>
           </li>
           <li className="nav-item   ml-3">
             <Link to={"/issuetracker"}>
-            <i className="far fa-list-alt fa-2x"></i>
+              <i className="far fa-list-alt fa-2x"></i>
             </Link>
           </li>
         </ul>
@@ -47,7 +48,19 @@ const App = () => {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/issuetracker" component={Issuetracker} />
-        <Route exact path="/randomquotes" component={RandomQuotes} />
+        <Route
+          exact
+          path="/weather"
+          render={() => (
+            <Weather
+              dt={1602104400 * 1000}
+              temp_min="22.67"
+              temp_max="24.39"
+              main="Clear"
+              icon="01d"
+            />
+          )}
+        />
       </Switch>
     </div>
   );

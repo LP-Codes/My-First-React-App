@@ -1,44 +1,43 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import Youtube from "./Youtube";
+import Clock from 'react-live-clock';
 
 const Home = () => {
-  const [lpdate, setlpdate] = useState("");
+  // const [lpdate, setlpdate] = useState("");
   const [cityname, setcityname] = useState("");
   const [statename, setstatename] = useState("");
   const [currentweather, setcurrentweather] = useState("");
   const [randomquoteauthor, setrandomquoteauthor] = useState("");
   const [randomquote, setrandomquote] = useState("");
-  const [fact, setfact] = useState([])
+  const [fact, setfact] = useState([]);
+  const [icon, seticon] = useState("");
+  const [weathertext, setweathertext] = useState("")
 
   // Only Run Once, on Mount
   // You can pass the special value of empty array [] as a way of saying “only run on mount, and clean up on unmount”. So if we changed our component above to call useEffect like this:
   // using useefect for onload event  return will trigger on exiting
   useEffect(() => {
-    let d = new Date()
- 
-   let facturl =`https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/${d.getMonth()+1}/${d.getDate()}`
-   fetch(facturl)
-  .then(res => res.json())
-  .then(data => {
-    let fact = data.births.slice(0, 5).map((x,index)=> {
-   
-    
-      return      index+1+" . " + x.text + " - Year "+ x.year +" \n " ;
-    });
+    let d = new Date();
 
-    setfact(fact)
-  
+    let facturl = `https://en.wikipedia.org/api/rest_v1/feed/onthisday/births/${
+      d.getMonth() + 1
+    }/${d.getDate()}`;
+    fetch(facturl)
+      .then((res) => res.json())
+      .then((data) => {
+        let fact = data.births.slice(0, 5).map((x, index) => {
+          return index + 1 + " . " + x.text + " - Year " + x.year + " \n ";
+        });
 
-       
-   });
-   
+        setfact(fact);
+      });
 
     // console.log("onload useefect fired")
-    setlpdate(Date());
+    // setlpdate(Date());
     // const ipkey = "693a05e3434d4a869ba63d38f2a06a5e";
     // let url1 = `https://api.ipgeolocation.io/ipgeo?apiKey=${ipkey}&ip=2401:4900:1aaf:2a7e:298d:9379:fe93:5123`;
-    let myip="https://get.geojs.io/v1/ip/geo.json"
+    let myip = "https://get.geojs.io/v1/ip/geo.json";
     // let urlm="https://api.ipgeolocationapi.com/geolocate"
 
     let url5 = "https://type.fit/api/quotes";
@@ -54,7 +53,9 @@ const Home = () => {
         fetch(url4)
           .then((res) => res.json())
           .then((data) => {
-            // console.log(data.main.temp);
+            // console.log(data.weather[0].description);
+            setweathertext(data.weather[0].description)
+            seticon(data.weather[0].icon);
             setcurrentweather(data.main.temp);
           });
       });
@@ -81,7 +82,7 @@ const Home = () => {
           <div
             className=" lp card-body text-center font-weight-bolder text-white p-5 "
             id="ip"
-            style={{ minHeight: 200 }}
+            style={{ maxHeight: 520 }}
           >
             {/* <!-- date will be displayed  using state--> */}
             <h4>
@@ -90,9 +91,15 @@ const Home = () => {
             </h4>
             <h5>
               {" "}
-              {lpdate} <i class="fas fa-cog fa-spin"></i>
+              <Clock format={'dddd, DD  MMMM   , YYYY, h:mm:ss'} ticking={true} /> <i class="fas fa-cog fa-spin text-danger"></i>
             </h5>
-            <h5 className="text-warning font-weight-bolder">Born On this Day <i class="fas fa-birthday-cake fa-2x" style={{color:"pink"}}></i></h5>
+            <h5 className="text-warning font-weight-bolder ">
+              Born On this Day{" "}
+              <i
+                class="fas fa-birthday-cake fa-2x"
+                style={{ color: "pink" }}
+              ></i>
+            </h5>
             <p>{fact}</p>
           </div>
         </div>
@@ -113,13 +120,13 @@ const Home = () => {
 
         <div className=" lp card bg-success col">
           <div
-            className="card-body text-center p-5"
+            className="card-body text-center p-5 mt-5"
             id="ip"
             style={{ color: "yellow" }}
           >
             {/* <!-- date will be displayed --> */}
             <h4>
-              <i class="fas fa-cloud-sun fa-2x"></i>
+            
             </h4>
             <h4>
               Current Weather at your location is : {currentweather}{" "}
@@ -127,6 +134,14 @@ const Home = () => {
                 <span>&#8451;</span>
               </b>
             </h4>
+            <h5  className="text-capitalize font-weight-bolder"> {weathertext}
+                {" "}
+                <img
+                  src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
+                  alt="icon"
+                  srcset=""
+                />
+              </h5>
           </div>
         </div>
 
@@ -135,10 +150,7 @@ const Home = () => {
             {/* <!-- date will be displayed --> */}
             <h2>
               {" "}
-              <i
-                className="fa fa-users fa-2x "
-                aria-hidden="true"
-              ></i>
+              <i className="fa fa-users fa-2x " aria-hidden="true"></i>
             </h2>
             <h3 className="font-weight-bolder ">
               {" "}
@@ -147,7 +159,6 @@ const Home = () => {
             <h4 className="font-weight-bolder text-white">{randomquote}</h4>
           </div>
         </div>
-      
       </div>
       <Youtube></Youtube>
     </div>
