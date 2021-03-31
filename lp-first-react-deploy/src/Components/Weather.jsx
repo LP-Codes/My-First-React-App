@@ -23,7 +23,7 @@ export default function Weather() {
           if (data.cod === "404") {
             console.info("City Not found");
           } else {
-            console.log(data);
+            // console.log(data);
             setcurrentweather(data.main.temp);
             setweathertext(data.weather[0].description);
             seticon(data.weather[0].icon);

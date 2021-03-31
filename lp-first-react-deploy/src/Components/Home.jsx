@@ -34,10 +34,7 @@ const Home = () => {
         setfact(fact);
       });
 
-    // console.log("onload useefect fired")
-    // setlpdate(Date());
-    // const ipkey = "693a05e3434d4a869ba63d38f2a06a5e";
-    // let url1 = `https://api.ipgeolocation.io/ipgeo?apiKey=${ipkey}&ip=2401:4900:1aaf:2a7e:298d:9379:fe93:5123`;
+  
     let myip = "https://get.geojs.io/v1/ip/geo.json";
     // let urlm="https://api.ipgeolocationapi.com/geolocate"
 
@@ -129,7 +126,7 @@ const Home = () => {
             style={{ color: "yellow" }}
           >
             {/* <!-- date will be displayed --> */}
-            <h4></h4>
+            
             <h4>
               Current Weather at your location is : {currentweather}{" "}
               <b>
