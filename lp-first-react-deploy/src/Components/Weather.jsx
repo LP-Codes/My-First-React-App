@@ -21,17 +21,8 @@ export default function Weather() {
         .then((res) => res.json())
         .then((data) => {
           if (data.cod === "404") {
-            // console.log("City Not found");
-            // toast.error(`Entered City-Name  ${city} Not Found `, {
-            //   position: "top-center",
-            //   autoClose: 2000,
-            //   hideProgressBar: false,
-            //   closeOnClick: true,
-            //   pauseOnHover: true,
-            //   draggable: true,
-            //   progress: undefined,
-            // });
-            // setcity("");
+            console.info("City Not found");
+    
           } else {
             console.log(data);
             setcurrentweather(data.main.temp);
