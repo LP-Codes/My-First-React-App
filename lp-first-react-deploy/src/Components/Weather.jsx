@@ -22,7 +22,6 @@ export default function Weather() {
         .then((data) => {
           if (data.cod === "404") {
             console.info("City Not found");
-    
           } else {
             console.log(data);
             setcurrentweather(data.main.temp);
@@ -47,17 +46,16 @@ export default function Weather() {
     lpsearch();
   }, [city, lpsearch]);
   return (
-    <div  >
-   
+    <div>
       <div className="container-fluid  ">
         <h1 className="text-center alert-primary font-weight-bolder ">
           Weather-App
         </h1>{" "}
       </div>
       <div className="lpcentered   ">
-        <h3 className="alert-info text-capitalize text-center">
+        <h4 className="alert-info text-capitalize text-center">
           Enter City's <i className="fas fa-city text-secondary"></i> Name
-        </h3>
+        </h4>
         <h5 className="text-center alert-danger font-weight-bolder ">
           {" "}
           <Clock format={"dddd, DD  MMMM   , YYYY, h:mm:ss"} ticking={true} />
@@ -83,16 +81,15 @@ export default function Weather() {
 
             <h3 className="text-capitalize alert-info">
               {" "}
-              <i class="fas fa-temperature-low"></i> -{currentweather}{" "}
-              <span>&#8451;</span> ,<i class="fas fa-tint"></i> -{humidity} %{" "}
+              <i class="fas fa-temperature-low"></i> - {currentweather}{" "}
+              <span>&#8451;</span> ,<i class="fas fa-tint"></i> - {humidity} %{" "}
               <i class="fas fa-wind"></i> - {wind} km/h{" "}
             </h3>
-            <h3 className="alert-warning">
+            <h3 className="bg-dark text-light">
               {weathertext}{" "}
               <img
                 src={`http://openweathermap.org/img/wn/${icon}@2x.png`}
                 alt="icon"
-                srcset=""
                 style={{ backgroundColor: "lightblue" }}
               />
             </h3>
