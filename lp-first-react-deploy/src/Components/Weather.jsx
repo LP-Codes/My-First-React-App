@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Clock from "react-live-clock";
 import "./Weather.css";
 import { useCallback } from "react";
@@ -12,6 +12,7 @@ export default function Weather() {
   const [weathertext, setweathertext] = useState("");
   const [humidity, sethumidity] = useState("");
   const [wind, setwind] = useState("");
+  const [backsp, setbacksp] = useState("");
 
   const lpsearch = useCallback(() => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
@@ -39,12 +40,14 @@ export default function Weather() {
   });
 
   let inputhndl = (event) => {
+    // console.log(event.target.value);
     setcity(event.target.value);
   };
 
-  useEffect(() => {
-    lpsearch();
-  }, [city, lpsearch]);
+  // useEffect(() => {
+  //   lpsearch();
+  // }, [city, lpsearch]);
+
   return (
     <div>
       <div className="container-fluid  ">
@@ -62,17 +65,25 @@ export default function Weather() {
         </h5>
 
         <input
+          onKeyDown={(e) => {
+            console.log(e.key + e.keyCode);
+            const mm = e.key
+            setbacksp(e.key);
+            console.log(mm);
+     
+          }}
           onChange={inputhndl}
           value={city}
           placeholder="Enter City's Name  Here to display weather data"
           className="form-control btn-outline-warning font-weight-bolder mb-3 mt-3"
         ></input>
-        {/* <button
+        <button
           className="form-control btn-success font-weight-bold "
           onClick={lpsearch}
         >
           Search <i className="fas fa-search  "></i>
-        </button> */}
+        </button>
+
         {city ? (
           <div className="text-center">
             <h3 className="alert-secondary text-capitalize">
@@ -89,15 +100,24 @@ export default function Weather() {
               {weathertext}{" "}
               <img
                 src={`https://openweathermap.org/img/wn/${icon}@2x.png`}
-                alt="icon"
+                alt=""
                 style={{ backgroundColor: "lightblue" }}
               />
             </h3>
           </div>
+
         ) : (
           <h5 className="alert-warning text-capitalize text-center">
-            No City-Name Entered
+          
           </h5>
+        )
+            }
+     {backsp==="Backspace"? (<h5 className="alert-warning text-capitalize text-center">
+            Click Search  After Entering city name
+          </h5>):
+         (
+          <p></p>
+
         )}
       </div>
     </div>
