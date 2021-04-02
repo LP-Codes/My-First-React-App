@@ -114,12 +114,12 @@ const Issuetracker = () => {
           >
             {x}
             <i
-              class="fas fa-check-circle float-md-right text-success"
+              class="fas fa-check-circle float-right text-success"
               id="ll"
               onClick={markdone}
             ></i>{" "}
             <i
-              class="fas fa-trash-alt  text-danger float-md-right"
+              class="fas fa-trash-alt  text-danger float-right"
               onClick={() => handeldel(index)}
             ></i>
           </li>
