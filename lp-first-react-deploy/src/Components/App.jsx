@@ -22,17 +22,17 @@ const App = () => {
 
         <ul className="navbar-nav">
           <li className="nav-item   ml-3 " style={{ color: "red" }}>
-            <Link to={"/"}>
+            <Link to={"/https://lp-codes.github.io/My-First-React-App/"}>
               <i className="fas fa-home fa-2x"></i>
             </Link>
           </li>
           <li className="nav-item  ml-3 ">
-            <Link to={"/weather"}>
-            <i class="fas fa-cloud-sun fa-2x"></i>
+            <Link to={"/https://lp-codes.github.io/My-First-React-App/weather"}>
+              <i class="fas fa-cloud-sun fa-2x"></i>
             </Link>
           </li>
           <li className="nav-item   ml-3">
-            <Link to={"/issuetracker"}>
+            <Link to={"/https://lp-codes.github.io/My-First-React-App/todo"}>
               <i className="far fa-list-alt fa-2x"></i>
             </Link>
           </li>
@@ -46,21 +46,9 @@ const App = () => {
         </div>
       </nav>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/issuetracker" component={Issuetracker} />
-        <Route
-          exact
-          path="/weather"
-          render={() => (
-            <Weather
-              dt={1602104400 * 1000}
-              temp_min="22.67"
-              temp_max="24.39"
-              main="Clear"
-              icon="01d"
-            />
-          )}
-        />
+        <Route exact path="/https://lp-codes.github.io/My-First-React-App" component={Home} />
+        <Route exact path="/https://lp-codes.github.io/My-First-React-App/todo" component={Issuetracker} />
+        <Route exact path="/https://lp-codes.github.io/My-First-React-App/weather" component={Weather} />
       </Switch>
     </div>
   );

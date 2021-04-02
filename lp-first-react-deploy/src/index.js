@@ -12,7 +12,7 @@ import App from "./Components/App";
 
 ReactDOM.render(
   // browseroute is imp
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
+  <BrowserRouter  basename={process.env.PUBLIC_URL}>
     <App />
   </BrowserRouter>,
   document.getElementById("root")
