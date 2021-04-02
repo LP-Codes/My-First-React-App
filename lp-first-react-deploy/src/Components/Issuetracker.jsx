@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import "./Issuetracker.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // import $ from 'jquery';
 // window.jQuery = $;
 
@@ -12,7 +15,18 @@ const Issuetracker = () => {
   };
 
   const lp = (event) => {
-    // let c = [1,2,34,55]
+    if (input === "") {
+      toast.error(' Please Provide Some Input!', {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
+    }
+    //  let c = [1,2,34,55]
 
     event.preventDefault();
     // if no input nothing will happen return none
@@ -53,6 +67,17 @@ const Issuetracker = () => {
 
   return (
     <div>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <h1 id="pk" className="text-center font-weight-bolder alert-info mb-5">
         Tasks To Do <i class="fas fa-clipboard-list text-success"></i>
       </h1>
