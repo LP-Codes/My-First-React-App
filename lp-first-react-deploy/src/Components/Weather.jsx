@@ -14,6 +14,7 @@ export default function Weather() {
   const [wind, setwind] = useState("");
   const [backsp, setbacksp] = useState("");
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const lpsearch = useCallback(() => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
 
@@ -50,51 +51,57 @@ export default function Weather() {
 
   return (
     <div>
-      <div className="container-fluid  ">
-        <h1 className="text-center alert-primary font-weight-bolder ">
+      <h5 className="text-center alert-danger font-weight-bolder ">
+        {" "}
+        <Clock format={"dddd, DD  MMMM   , YYYY, h:mm:ss"} ticking={true} />
+      </h5>
+      <div className="container-fluid   ">
+        <h1 className="text-center  font-weight-bolder alert-warning ">
           Weather-App
         </h1>{" "}
       </div>
       <div className="lpcentered   ">
-        <h4 className="alert-info text-capitalize text-center">
-          Enter City's <i className="fas fa-city text-secondary"></i> Name
+        <h4 className="alert-info text-capitalize text-center ">
+          Enter City's{" "}
+          <i className="fas fa-city text-secondary text-danger fa-2x"></i> Name
         </h4>
-        <h5 className="text-center alert-danger font-weight-bolder ">
-          {" "}
-          <Clock format={"dddd, DD  MMMM   , YYYY, h:mm:ss"} ticking={true} />
-        </h5>
 
         <input
           onKeyDown={(e) => {
-            console.log(e.key + e.keyCode);
-            const mm = e.key
+            // console.log(e.key + e.keyCode);
+            // const mm = e.key;
             setbacksp(e.key);
-            console.log(mm);
-     
+            setcurrentweather("");
+            sethumidity("");
+            setwind("");
+            seticon("");
+            setweathertext("");
+            // console.log(mm);
           }}
           onChange={inputhndl}
           value={city}
           placeholder="Enter City's Name  Here to display weather data"
-          className="form-control btn-outline-warning font-weight-bolder mb-3 mt-3"
+          className="form-control btn-outline-warning font-weight-bolder mb-4 mt-4"
         ></input>
         <button
-          className="form-control btn-success font-weight-bold "
+          className="form-control btn-success font-weight-bold font-weight-bolder "
           onClick={lpsearch}
         >
           Search <i className="fas fa-search  "></i>
         </button>
 
         {city ? (
-          <div className="text-center">
+          <div className="text-center ">
             <h3 className="alert-secondary text-capitalize">
               <i class="fas fa-map-marker-alt text-danger"></i> {city} - {city1}
             </h3>
 
             <h3 className="text-capitalize alert-info">
               {" "}
-              <i class="fas fa-temperature-low"></i> - {currentweather}{" "}
-              <span>&#8451;</span> ,<i class="fas fa-tint"></i> - {humidity} %{" "}
-              <i class="fas fa-wind"></i> - {wind} km/h{" "}
+              Temperature <i class="fas fa-temperature-low"></i>{" "}
+              {currentweather} <span>&#8451;</span> Humidty{" "}
+              <i class="fas fa-tint"></i> {humidity} % WindSpeed{" "}
+              <i class="fas fa-wind"></i> {wind} km/h{" "}
             </h3>
             <h3 className="bg-dark text-light">
               {weathertext}{" "}
@@ -105,19 +112,16 @@ export default function Weather() {
               />
             </h3>
           </div>
-
         ) : (
+          // eslint-disable-next-line jsx-a11y/heading-has-content
+          <h5 className="alert-warning text-capitalize text-center"></h5>
+        )}
+        {backsp === "Backspace" ? (
           <h5 className="alert-warning text-capitalize text-center">
-          
+            Click Search After Entering city name
           </h5>
-        )
-            }
-     {backsp==="Backspace"? (<h5 className="alert-warning text-capitalize text-center">
-            Click Search  After Entering city name
-          </h5>):
-         (
+        ) : (
           <p></p>
-
         )}
       </div>
     </div>

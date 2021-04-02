@@ -1,14 +1,16 @@
 .lpcentered {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -40%);
-  width: 90vw;
-  height: 55vh;
+  width: 80vw;
+  height: 45vh;
 
-  border: 10px solid rgb(236, 227, 227);
+
+
+  border:8px solid rgb(248, 208, 208) ;
   border-style: outset;
+
 }
 
 .lpg {
