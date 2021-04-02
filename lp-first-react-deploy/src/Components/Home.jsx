@@ -18,6 +18,21 @@ const Home = () => {
   // Only Run Once, on Mount
   // You can pass the special value of empty array [] as a way of saying “only run on mount, and clean up on unmount”. So if we changed our component above to call useEffect like this:
   // using useefect for onload event  return will trigger on exiting
+
+const moreqt=() => {
+  let url5 = "https://type.fit/api/quotes";
+  fetch(url5)
+  .then((res) => res.json())
+  .then(function (data) {
+    // get random data between 0-100
+    var x = Math.floor(Math.random() * 100 + 1);
+    // console.log(data[x].author);
+    setrandomquoteauthor(data[x].author);
+    setrandomquote(data[x].text);
+    // console.log(data[0]);
+  });
+}
+
   useEffect(() => {
     let d = new Date();
 
@@ -148,7 +163,7 @@ const Home = () => {
 
         <div className=" lp card bg-danger col text-white-50">
           <div className="card-body text-center p-5" id="ip">
-            {/* <!-- date will be displayed --> */}
+           <h2>Random Quotes</h2>
             <h2>
               {" "}
               <i className="fa fa-users fa-2x " aria-hidden="true"></i>
@@ -158,6 +173,7 @@ const Home = () => {
               Author - {randomquoteauthor}
             </h3>
             <h4 className="font-weight-bolder text-white">{randomquote}</h4>
+            <button onClick={moreqt} className="btn-primary font-weight-bolder mt-2">Next</button>
           </div>
         </div>
       </div>
