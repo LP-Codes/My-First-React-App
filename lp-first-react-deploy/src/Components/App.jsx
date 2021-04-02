@@ -22,17 +22,17 @@ const App = () => {
 
         <ul className="navbar-nav">
           <li className="nav-item   ml-3 " style={{ color: "red" }}>
-            <Link to={"/https://lp-codes.github.io/My-First-React-App/"}>
+            <Link to={"/"}>
               <i className="fas fa-home fa-2x"></i>
             </Link>
           </li>
           <li className="nav-item  ml-3 ">
-            <Link to={"/https://lp-codes.github.io/My-First-React-App/weather"}>
+            <Link to={"/weather"}>
               <i class="fas fa-cloud-sun fa-2x"></i>
             </Link>
           </li>
           <li className="nav-item   ml-3">
-            <Link to={"/https://lp-codes.github.io/My-First-React-App/todo"}>
+            <Link to={"/todo"}>
               <i className="far fa-list-alt fa-2x"></i>
             </Link>
           </li>
@@ -46,9 +46,9 @@ const App = () => {
         </div>
       </nav>
       <Switch>
-        <Route exact path="/https://lp-codes.github.io/My-First-React-App" component={Home} />
-        <Route exact path="/https://lp-codes.github.io/My-First-React-App/todo" component={Issuetracker} />
-        <Route exact path="/https://lp-codes.github.io/My-First-React-App/weather" component={Weather} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/todo" component={Issuetracker} />
+        <Route exact path="/weather" component={Weather} />
       </Switch>
     </div>
   );
