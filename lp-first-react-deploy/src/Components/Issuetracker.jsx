@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Issuetracker.css";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast ,Zoom,} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // import $ from 'jquery';
@@ -68,6 +68,7 @@ const Issuetracker = () => {
   return (
     <div>
       <ToastContainer
+       transition={Zoom}
         position="top-center"
         autoClose={2000}
         hideProgressBar={false}
