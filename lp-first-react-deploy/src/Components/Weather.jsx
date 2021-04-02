@@ -61,10 +61,10 @@ export default function Weather() {
         </h1>{" "}
       </div>
       <div className="lpcentered   ">
-        <h4 className="alert-info text-capitalize text-center ">
+        <h2 className="alert-info text-capitalize text-center ">
           Enter City's{" "}
           <i className="fas fa-city text-secondary text-danger fa-2x"></i> Name
-        </h4>
+        </h2>
 
         <input
           onKeyDown={(e) => {
@@ -76,12 +76,14 @@ export default function Weather() {
             setwind("");
             seticon("");
             setweathertext("");
+            
+            setcity1("")
             // console.log(mm);
           }}
           onChange={inputhndl}
           value={city}
           placeholder="Enter City's Name  Here to display weather data"
-          className="form-control btn-outline-warning font-weight-bolder mb-4 mt-4"
+          className="form-control btn-outline-secondary font-weight-bolder mb-4 mt-4"
         ></input>
         <button
           className="form-control btn-success font-weight-bold font-weight-bolder "
@@ -92,17 +94,18 @@ export default function Weather() {
 
         {city ? (
           <div className="text-center ">
-            <h3 className="alert-secondary text-capitalize">
-              <i class="fas fa-map-marker-alt text-danger"></i> {city} - {city1}
+            <h3 className="alert-secondary text-capitalize font-weight-bold">
+              <i class="fas fa-map-marker-alt text-danger"></i> {city}    
+              <img   className="ml-2" src={`https://www.countryflags.io/${city1}/shiny/64.png`} alt="" srcset=""/>
             </h3>
 
-            <h3 className="text-capitalize alert-info">
+            <h4 className="text-capitalize alert-info ">
               {" "}
-              Temperature <i class="fas fa-temperature-low"></i>{" "}
+             Current  Temperature <i class="fas fa-temperature-low"></i>{" "}
               {currentweather} <span>&#8451;</span> Humidty{" "}
-              <i class="fas fa-tint"></i> {humidity} % WindSpeed{" "}
+              <i class="fas fa-tint"></i> {humidity} %  WindSpeed{" "}
               <i class="fas fa-wind"></i> {wind} km/h{" "}
-            </h3>
+            </h4>
             <h3 className="bg-dark text-light">
               {weathertext}{" "}
               <img
