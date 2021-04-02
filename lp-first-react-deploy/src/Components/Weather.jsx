@@ -98,14 +98,6 @@ export default function Weather() {
               <i class="fas fa-map-marker-alt text-danger"></i> {city}    
               <img   className="ml-2" src={`https://www.countryflags.io/${city1}/shiny/64.png`} alt="" srcset=""/>
             </h3>
-
-            <h4 className="text-capitalize alert-info ">
-              {" "}
-             Current  Temperature <i class="fas fa-temperature-low"></i>{" "}
-              {currentweather} <span>&#8451;</span> Humidty{" "}
-              <i class="fas fa-tint"></i> {humidity} %  WindSpeed{" "}
-              <i class="fas fa-wind"></i> {wind} km/h{" "}
-            </h4>
             <h3 className="bg-dark text-light">
               {weathertext}{" "}
               <img
@@ -114,6 +106,14 @@ export default function Weather() {
                 style={{ backgroundColor: "lightblue" }}
               />
             </h3>
+            <h4 className="text-capitalize alert-info ">
+              {" "}
+             Current  Temperature <i class="fas fa-temperature-low"></i>{" "}
+              {currentweather} <span>&#8451;</span> Humidty{" "}
+              <i class="fas fa-tint"></i> {humidity} %  WindSpeed{" "}
+              <i class="fas fa-wind"></i> {wind} km/h{" "}
+            </h4>
+         
           </div>
         ) : (
           // eslint-disable-next-line jsx-a11y/heading-has-content
