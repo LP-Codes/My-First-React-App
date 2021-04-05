@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/My-First-React-App/static/css/main.64167a74.chunk.css",
-    "main.js": "/My-First-React-App/static/js/main.8bbfb876.chunk.js",
-    "main.js.map": "/My-First-React-App/static/js/main.8bbfb876.chunk.js.map",
+    "main.js": "/My-First-React-App/static/js/main.e8a3c755.chunk.js",
+    "main.js.map": "/My-First-React-App/static/js/main.e8a3c755.chunk.js.map",
     "runtime-main.js": "/My-First-React-App/static/js/runtime-main.e38b4e89.js",
     "runtime-main.js.map": "/My-First-React-App/static/js/runtime-main.e38b4e89.js.map",
     "static/css/2.cf14626a.chunk.css": "/My-First-React-App/static/css/2.cf14626a.chunk.css",
@@ -14,7 +14,7 @@
     "static/css/2.cf14626a.chunk.css.map": "/My-First-React-App/static/css/2.cf14626a.chunk.css.map",
     "static/css/main.64167a74.chunk.css.map": "/My-First-React-App/static/css/main.64167a74.chunk.css.map",
     "static/js/2.f01f10fb.chunk.js.LICENSE.txt": "/My-First-React-App/static/js/2.f01f10fb.chunk.js.LICENSE.txt",
-    "static/js/main.8bbfb876.chunk.js.LICENSE.txt": "/My-First-React-App/static/js/main.8bbfb876.chunk.js.LICENSE.txt",
+    "static/js/main.e8a3c755.chunk.js.LICENSE.txt": "/My-First-React-App/static/js/main.e8a3c755.chunk.js.LICENSE.txt",
     "static/media/font-awesome.min.css": "/My-First-React-App/static/media/fontawesome-webfont.f691f37e.woff"
   },
   "entrypoints": [
@@ -22,6 +22,6 @@
     "static/css/2.cf14626a.chunk.css",
     "static/js/2.f01f10fb.chunk.js",
     "static/css/main.64167a74.chunk.css",
-    "static/js/main.8bbfb876.chunk.js"
+    "static/js/main.e8a3c755.chunk.js"
   ]
 }
