@@ -1,0 +1,3 @@
+//! console.log(index)
+
+//!if no input nothing will happen return none
