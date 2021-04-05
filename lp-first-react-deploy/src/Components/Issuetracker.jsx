@@ -3,15 +3,15 @@ import "./Issuetracker.css";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// import $ from 'jquery';
-// window.jQuery = $;
+// *import $ from 'jquery';
+// * window.jQuery = $;
 
 const Issuetracker = () => {
   const [input, setValue] = useState("");
 
   const [todos, setTodos] = useState([]);
 
-  // passing  entered
+  // !passing  entered
   const handleInput = (event) => {
     setValue(event.target.value);
   };
@@ -31,18 +31,18 @@ const Issuetracker = () => {
     //  let c = [1,2,34,55]
 
     event.preventDefault();
-    // if no input nothing will happen return none
+    //!if no input nothing will happen return none
     if (!input) return;
-    // using spread operator its used whenever we need to add array data to exiting array
+    // !using spread operator its used whenever we need to add array data to exiting array
     const newTodos = [...todos, input];
 
     setTodos(newTodos);
-    // clearing input text
+    // !clearing input text
     setValue("");
   };
 
   const handeldel = (index) => {
-    // console.log(index)
+    //! console.log(index)
 
     todos.splice(index, 1);
     setTodos([...todos]);
@@ -61,13 +61,7 @@ const Issuetracker = () => {
     tgt.closest("li").style.backgroundColor = "Chartreuse";
     tgt.closest("li").style.textDecoration = "line-through";
   };
-  // useEffect(() => {
-  // //   $("#pk").click(function (e) {
-  // //     e.preventDefault();
-  // //     alert('hello');
-  // // })
-  // // }
-  // // )
+
 
   useEffect(() => {
     const pagetodoval = JSON.parse(window.localStorage.getItem("name"));
