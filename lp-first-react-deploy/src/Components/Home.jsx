@@ -88,13 +88,13 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className="lp22">
       <div className="row card card-deck">
         <div className="card bg-primary col">
           <div
             className=" lp card-body text-center font-weight-bolder text-white p-5 "
             id="ip"
-            style={{ maxHeight: 520 }}
+            style={{ maxHeight: 500 }}
           >
             {/* <!-- date will be displayed  using state--> */}
             <h4>
@@ -107,16 +107,15 @@ const Home = () => {
                 format={"dddd, DD  MMMM   , YYYY, h:mm:ss"}
                 ticking={true}
               />{" "}
-              <i class="fas fa-cog fa-spin text-danger"></i>
             </h5>
-            <h5 className="text-warning font-weight-bolder ">
+            <h6 className="text-dark font-weight-bolder ">
               Born On this Day{" "}
               <i
                 class="fas fa-birthday-cake fa-2x"
-                style={{ color: "pink" }}
+                style={{ color: "hotpink" }}
               ></i>
-            </h5>
-            <p className="text-justify">{fact}</p>
+            </h6>
+            <p className="text-justify  ">{fact}</p>
           </div>
         </div>
 
@@ -125,7 +124,10 @@ const Home = () => {
             {/* <!-- location will be displayed using state--> */}
             <h4>
               {" "}
-              <i className="fa fa-map-marker fa-2x text-danger " aria-hidden="true"></i>{" "}
+              <i
+                className="fa fa-map-marker fa-2x text-danger  fa-spin "
+                aria-hidden="true"
+              ></i>{" "}
             </h4>
             <h5>Your Location Is Detected As :</h5>
             <h3>
@@ -171,7 +173,7 @@ const Home = () => {
               {" "}
               Author - {randomquoteauthor}
             </h3>
-            <h4 className="font-weight-bolder text-white text-justify">{randomquote}</h4>
+            <h4 className="font-weight-bolder text-white ">{randomquote}</h4>
             <button
               onClick={moreqt}
               className="btn-primary font-weight-bolder mt-2"

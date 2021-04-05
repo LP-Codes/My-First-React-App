@@ -50,7 +50,7 @@ export default function Weather() {
   // }, [city, lpsearch]);
 
   return (
-    <div>
+    <div >
       <h5 className="text-center alert-danger font-weight-bolder ">
         {" "}
         <Clock format={"dddd, DD  MMMM   , YYYY, h:mm:ss"} ticking={true} />
@@ -60,7 +60,7 @@ export default function Weather() {
           Weather-App
         </h1>{" "}
       </div>
-      <div className="lpcentered   ">
+      <div className="lpcentered  lp22 ">
         <h2 className="alert-info text-capitalize text-center ">
           Enter City's{" "}
           <i className="fas fa-city text-secondary text-danger fa-2x"></i> Name
@@ -86,10 +86,10 @@ export default function Weather() {
           className="form-control btn-outline-secondary font-weight-bolder mb-4 mt-4"
         ></input>
         <button
-          className="form-control btn-success font-weight-bold font-weight-bolder "
+          className="form-control btn-success font-weight-bold font-weight-bolder rounded-pill "
           onClick={lpsearch}
         >
-          Search <i className="fas fa-search  "></i>
+          Search <i className="fas fa-search  fa-spin  "></i>
         </button>
 
         {city ? (
