@@ -7,7 +7,7 @@ import Home from "./Home";
 import "./App.css";
 import Weather from "./Weather";
 import Covid from "./Covid";
-// import logo192 from "../Images/logo192.png";
+import logo192 from "../Images/logo192.png";
 // import AndroidOutlinedIcon from '@material-ui/icons/AndroidOutlined';
 
 const App = () => {
@@ -18,41 +18,46 @@ const App = () => {
         {/* // eslint-disable-next-line jsx-a11y/anchor-is-valid */}
 
         <ul className="navbar-nav">
-          <li className="nav-item   ml-3 " style={{ color: "red" }}>
+          <li className="nav-item    " >
             <Link to={"/"}>
-              <i className="fas fa-home fa-2x"></i>
+              <i className="fas fa-home fa-2x text-warning"></i>
             </Link>
           </li>
           <li className="nav-item  ml-3 ">
             <Link to={"/weather"}>
-              <i class="fas fa-cloud-sun fa-2x"></i>
+              <i class="fas fa-cloud-sun fa-2x text-warning"></i>
             </Link>
           </li>
           <li className="nav-item   ml-3">
             <Link to={"/todo"}>
-              <i className="far fa-list-alt fa-2x"></i>
+              <i className="far fa-list-alt fa-2x text-warning"></i>
             </Link>
           </li>
           {/* test */}
-          <li class="nav-item dropdown ml-3">
+          <li className="nav-item dropdown ml-3">
             <a
-              class=" nav-item  dropdown-toggle"
+              className=" nav-item  dropdown-toggle"
               href=""
               id="navbardrop"
               data-toggle="dropdown"
             >
-              <i class="fas fa-bars fa-2x"></i>
+              
+           <i className="fas fa-caret-square-down fa-2x text-info"></i>
             </a>
-            <div class="dropdown-menu ">
-              <Link class="dropdown-item font-weight-bolder" to={"/covidtracker"} > Covid Tracker</Link>
+            <div className="dropdown-menu ">
+              <Link className="dropdown-item font-weight-bolder " to={"/covidtracker"} > Covid Tracker</Link>
               
             </div>
           </li>
         </ul>
         <div className="navbar-collapse">
           <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
-              <i className="fab fa-node fa-2x text-warning"></i>
+            <li className="nav-item navbar-brand">
+            {/* <i class="fab fa-react fa-2x  text-info"></i> */}
+            
+              <img  className="nav-item  "src={logo192}  alt="" style={{width:35}} />
+          
+             
             </li>
           </ul>
         </div>
