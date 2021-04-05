@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Issuetracker.css";
-import { ToastContainer, toast ,Zoom,} from "react-toastify";
+import { ToastContainer, toast, Zoom } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 // import $ from 'jquery';
@@ -8,7 +8,9 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Issuetracker = () => {
   const [input, setValue] = useState("");
+
   const [todos, setTodos] = useState([]);
+
   // passing  entered
   const handleInput = (event) => {
     setValue(event.target.value);
@@ -16,7 +18,7 @@ const Issuetracker = () => {
 
   const lp = (event) => {
     if (input === "") {
-      toast.error(' Please Provide Some Input!', {
+      toast.error(" Please Provide Some Input!", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: false,
@@ -24,7 +26,7 @@ const Issuetracker = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        });
+      });
     }
     //  let c = [1,2,34,55]
 
@@ -38,6 +40,7 @@ const Issuetracker = () => {
     // clearing input text
     setValue("");
   };
+
   const handeldel = (index) => {
     // console.log(index)
 
@@ -49,6 +52,7 @@ const Issuetracker = () => {
   };
   // const [line, setline] = useState(false);
   // const [ll, setll] = useState(false);
+
   const markdone = (e) => {
     // let c= $("#ll")
     let tgt = e.target;
@@ -65,10 +69,24 @@ const Issuetracker = () => {
   // // }
   // // )
 
+  useEffect(() => {
+    const pagetodoval = JSON.parse(window.localStorage.getItem("name"));
+    if (pagetodoval) {
+      setTodos(pagetodoval);
+    }
+  }, []);
+
+  useEffect(() => {
+    // console.log("hello");
+
+    window.localStorage.setItem("name", JSON.stringify(todos));
+  }, [todos]);
+
   return (
-    <div>
+    <div >
       <ToastContainer
-       transition={Zoom}
+        className="font-weight-bolder"
+        transition={Zoom}
         position="top-center"
         autoClose={2000}
         hideProgressBar={false}
@@ -91,6 +109,7 @@ const Issuetracker = () => {
           value={input}
           onChange={handleInput}
         />
+
         <div class="input-group-append">
           <button
             className="input-group-append font-weight-bolder "
@@ -105,9 +124,11 @@ const Issuetracker = () => {
       {todos.map((x, index) => (
         <ol style={{ listStyle: "outside" }} className="container">
           <li
-            className="font-weight-bolder table-bordered text-capitalize alert-secondary "
+            className="font-weight-bolder table-bordered text-capitalize alert-success "
             style={{
               fontSize: 30,
+              listStyleType: "none",
+
               // textDecoration: line ? "line-through" : "none",
               // backgroundColor: ll ? "Chartreuse" : "none",
             }}
