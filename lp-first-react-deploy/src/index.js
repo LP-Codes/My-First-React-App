@@ -7,6 +7,9 @@ import "../node_modules/font-awesome/css/font-awesome.min.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { HashRouter } from 'react-router-dom'
 import "font-awesome/css/font-awesome.min.css";
+import 'bootstrap/dist/js/bootstrap.js';
+import 'bootstrap/js/dist/dropdown'
+
 // import { BrowserRouter } from "react-router-dom";
 import App from "./Components/App";
 

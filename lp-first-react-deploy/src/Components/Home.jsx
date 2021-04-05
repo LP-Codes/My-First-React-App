@@ -115,7 +115,7 @@ const Home = () => {
                 style={{ color: "hotpink" }}
               ></i>
             </h6>
-            <p className="text-justify  ">{fact}</p>
+            <p className=" ">{fact}</p>
           </div>
         </div>
 

@@ -2,12 +2,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import { Switch, Route, Link } from "react-router-dom";
-import logo192 from "../Images/logo192.png";
-
 import Issuetracker from "./Issuetracker";
 import Home from "./Home";
 import "./App.css";
 import Weather from "./Weather";
+import Covid from "./Covid";
+// import logo192 from "../Images/logo192.png";
 // import AndroidOutlinedIcon from '@material-ui/icons/AndroidOutlined';
 
 const App = () => {
@@ -16,9 +16,6 @@ const App = () => {
       {/* // eslint-disable-next-line react/jsx-no-comment-textnodes */}
       <nav className="navbar  navbar-expand bg-dark navbar-dark mb-2">
         {/* // eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-        <a className="navbar-brand">
-          <img src={logo192} alt="logo" style={{ width: "40px" }} />
-        </a>
 
         <ul className="navbar-nav">
           <li className="nav-item   ml-3 " style={{ color: "red" }}>
@@ -36,6 +33,21 @@ const App = () => {
               <i className="far fa-list-alt fa-2x"></i>
             </Link>
           </li>
+          {/* test */}
+          <li class="nav-item dropdown ml-3">
+            <a
+              class=" nav-item  dropdown-toggle"
+              href=""
+              id="navbardrop"
+              data-toggle="dropdown"
+            >
+              <i class="fas fa-bars fa-2x"></i>
+            </a>
+            <div class="dropdown-menu ">
+              <Link class="dropdown-item font-weight-bolder" to={"/covidtracker"} > Covid Tracker</Link>
+              
+            </div>
+          </li>
         </ul>
         <div className="navbar-collapse">
           <ul className="navbar-nav ml-auto">
@@ -49,6 +61,7 @@ const App = () => {
         <Route exact path="/" component={Home} />
         <Route exact path="/todo" component={Issuetracker} />
         <Route exact path="/weather" component={Weather} />
+        <Route exact path="/covidtracker" component={Covid} />
       </Switch>
     </div>
   );
