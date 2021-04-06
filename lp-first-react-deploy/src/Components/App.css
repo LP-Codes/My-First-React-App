@@ -21,8 +21,9 @@ iframe:hover {
   
 }
 
-.card {
-  border-radius: 90px;
+.card11 {
+  border-radius: 50px;
+ 
 
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 30px 20px rgba(0, 0, 0, 0.2), 0px 0px 50px rgba(0, 0, 0, 0.2);
 }

@@ -64,7 +64,7 @@ const Home = () => {
         fetch(url4)
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            // console.log(data);
             // console.log(data.weather[0].description);
             setweathertext(data.weather[0].description);
             seticon(data.weather[0].icon);

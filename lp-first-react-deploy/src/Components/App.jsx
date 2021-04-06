@@ -18,7 +18,7 @@ const App = () => {
         {/* // eslint-disable-next-line jsx-a11y/anchor-is-valid */}
 
         <ul className="navbar-nav">
-          <li className="nav-item    " >
+          <li className="nav-item    ">
             <Link to={"/"}>
               <i className="fas fa-home fa-2x text-warning"></i>
             </Link>
@@ -41,23 +41,30 @@ const App = () => {
               id="navbardrop"
               data-toggle="dropdown"
             >
-              
-           <i className="fas fa-caret-square-down fa-2x text-info"></i>
+              <i className="fas fa-caret-square-down fa-2x text-info"></i>
             </a>
             <div className="dropdown-menu ">
-              <Link className="dropdown-item font-weight-bolder " to={"/covidtracker"} > Covid Tracker</Link>
-              
+              <Link
+                className="dropdown-item font-weight-bolder "
+                to={"/covidtracker"}
+              >
+                {" "}
+                Covid Tracker
+              </Link>
             </div>
           </li>
         </ul>
         <div className="navbar-collapse">
           <ul className="navbar-nav ml-auto">
             <li className="nav-item navbar-brand">
-            {/* <i class="fab fa-react fa-2x  text-info"></i> */}
-            
-              <img  className="nav-item  "src={logo192}  alt="" style={{width:35}} />
-          
-             
+              {/* <i class="fab fa-react fa-2x  text-info"></i> */}
+
+              <img
+                className="nav-item  "
+                src={logo192}
+                alt=""
+                style={{ width: 35 }}
+              />
             </li>
           </ul>
         </div>
