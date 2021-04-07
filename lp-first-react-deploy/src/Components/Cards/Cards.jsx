@@ -3,39 +3,34 @@ import { useState, useEffect } from "react";
 
 import CountUp from "react-countup";
 
-export default function Cards() {
+export default function Cards(props) {
   const [active, setactive] = useState("");
   const [recovered, setrecovered] = useState("");
   const [deaths, setdeaths] = useState("");
   const [updatetime, setupdatetime] = useState("");
 
-  useEffect(() => {
-    const urlc = "https://covid19.mathdro.id/api";
-    fetch(urlc)
-      .then((response) => {
-        if (response.status === 200) {
-          return response.json();
-        } else {
-          throw new Error("Something went wrong on api server!");
-        }
-      })
-      .then((data) => {
-        //   console.log(data);
-        setactive(data.confirmed.value);
-        setrecovered(data.recovered.value);
-        setdeaths(data.deaths.value);
-        const chng = new Date(data.lastUpdate).toDateString();
-        setupdatetime(chng);
+  // console.log(props.data);
 
-        //   console.log(data.confirmed.value);
-        //   console.log(data.recovered.value);
-        //   console.log(data.deaths.value);
-        //   console.log(data.lastUpdate);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  }, []);
+  useEffect(() => {
+    //  console.log(props);
+    //  if (!props.data) {
+    //    const msg = "Loading.."
+    //    return msg
+    //  }
+    if (!props.data) {
+      // console.log(props);
+      const msg = "Loading..";
+      return msg;
+    } else {
+      setactive(props.data.confirmed.value);
+      setrecovered(props.data.recovered.value);
+      setdeaths(props.data.deaths.value);
+      const chng = new Date(props.data.lastUpdate).toDateString();
+      setupdatetime(chng);
+    }
+  }, [props]);
+
+ 
 
   return (
     <div>
@@ -51,7 +46,6 @@ export default function Cards() {
                 end={active}
                 duration={2.75}
                 separator=","
-                decimals={3}
               ></CountUp>
             </p>
 
@@ -72,7 +66,6 @@ export default function Cards() {
                 end={recovered}
                 duration={2.75}
                 separator=","
-                decimals={3}
               ></CountUp>
             </p>
             <p className="text-center font-weight-bolder alert-dark">
@@ -92,7 +85,6 @@ export default function Cards() {
                 end={deaths}
                 duration={2.75}
                 separator=","
-                decimals={3}
               ></CountUp>
             </p>
             <p className="text-center font-weight-bolder alert-dark">
