@@ -40,8 +40,8 @@ const App = () => {
               href=""
               id="navbardrop"
               data-toggle="dropdown"
-            >
-              <i className="fas fa-caret-square-down fa-2x text-info"></i>
+            > 
+              <i className="fas fa-caret-square-down fa-2x text-warning"></i>
             </a>
             <div className="dropdown-menu ">
               <Link

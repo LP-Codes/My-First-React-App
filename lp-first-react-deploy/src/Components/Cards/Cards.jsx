@@ -1,22 +1,44 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
 import CountUp from "react-countup";
+import { makeStyles } from "@material-ui/core/styles";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+// import FormHelperText from "@material-ui/core/FormHelperText";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+
+const useStyles = makeStyles((theme) => ({
+  formControl: {
+    margin: theme.spacing(1),
+    minWidth: "70%",
+  },
+  selectEmpty: {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 export default function Cards(props) {
+  const classes = useStyles();
+  // const [age, setAge] = React.useState("");
+
+
   const [active, setactive] = useState("");
   const [recovered, setrecovered] = useState("");
   const [deaths, setdeaths] = useState("");
   const [updatetime, setupdatetime] = useState("");
+  const [contry, setcontry] = useState([]);
+  const [selectedcountry, setselectedcountry] = useState("");
 
-  // console.log(props.data);
+  // ! selected country
+  const checkselval = (e) => {
+    const countryname = e.target.value;
+    // console.log(countryname);
+    setselectedcountry(countryname);
+  };
 
+  // ! setting default val
   useEffect(() => {
-    //  console.log(props);
-    //  if (!props.data) {
-    //    const msg = "Loading.."
-    //    return msg
-    //  }
     if (!props.data) {
       // console.log(props);
       const msg = "Loading..";
@@ -29,16 +51,7 @@ export default function Cards(props) {
       setupdatetime(chng);
     }
   }, [props]);
-
-  const [contry, setcontry] = useState([]);
-  const [selectedcountry, setselectedcountry] = useState("");
-
-  const checkselval = (e) => {
-    const countryname = e.target.value;
-    console.log(countryname);
-    setselectedcountry(countryname);
-  };
-
+  // ! for selecter country
   useEffect(() => {
     const urlp = "https://covid19.mathdro.id/api/countries";
     fetch(urlp)
@@ -50,7 +63,7 @@ export default function Cards(props) {
         }
       })
       .then((data) => {
-        // console.log(data.countries)
+        // console.log(data.countries);
         const lp = data.countries;
         //   console.log(lp);
         setcontry(lp);
@@ -59,7 +72,7 @@ export default function Cards(props) {
         console.error(error);
       });
   }, [setcontry]);
-
+  // ! fetching selected country data
   useEffect(() => {
     const urlp2 = `https://covid19.mathdro.id/api/countries/${selectedcountry}`;
     fetch(urlp2)
@@ -71,7 +84,6 @@ export default function Cards(props) {
         }
       })
       .then((data) => {
-        // console.log(data);
         setactive(data.confirmed.value);
         setrecovered(data.recovered.value);
         setdeaths(data.deaths.value);
@@ -93,7 +105,7 @@ export default function Cards(props) {
               <CountUp
                 start={0}
                 end={active}
-                duration={2.75}
+                duration={1.5}
                 separator=","
               ></CountUp>
             </p>
@@ -113,7 +125,7 @@ export default function Cards(props) {
               <CountUp
                 start={0}
                 end={recovered}
-                duration={2.75}
+                duration={1.5}
                 separator=","
               ></CountUp>
             </p>
@@ -132,7 +144,7 @@ export default function Cards(props) {
               <CountUp
                 start={0}
                 end={deaths}
-                duration={2.75}
+                duration={1.5}
                 separator=","
               ></CountUp>
             </p>
@@ -143,23 +155,37 @@ export default function Cards(props) {
         </div>
       </div>
       <div className="form-group font-weight-bolder mt-4 text-center alert-info ">
-        <label for="sel1 ">Select Country:</label>
-        <select
-          class="form-control font-weight-bold  mt-3"
-          id="sel1"
-          onClick={checkselval}
-        >
-          <option>Global</option>
+        <h5 className="font-weight-bolder text-danger">{selectedcountry} </h5>
+        <h5 className="font-weight-bolder mt-4">Select Country </h5>
+        {/* <h5 className="">Select Country </h5> */}
 
-          {contry.map((x) => {
-            // console.log(x);
-            return (
-              <option className="alert-dark font-weight-bold " value={x.name}>
-                {x.name}
-              </option>
-            );
-          })}
-        </select>
+        <FormControl className={classes.formControl}>
+          <InputLabel id="demo-simple-select-label" className="font-weight-bold">Select Country</InputLabel>
+          <Select
+            class="form-control font-weight-bold  mt-3"
+            id="sel1"
+            onClick={checkselval}
+            value={selectedcountry}
+          >
+            {contry.map((x, i) => {
+              return (
+                <MenuItem
+                  className="alert-dark font-weight-bold "
+                  value={x.name}
+                  index={i}
+                >
+                  <img
+                    src={`https://www.countryflags.io/${x.iso2}/shiny/64.png`}
+                    alt=""
+                    style={{ backgroundColor: "lightblue" ,height:"90px"}}
+                  /> 
+                   {x.name} 
+                  
+                </MenuItem>
+              );
+            })}
+          </Select>
+        </FormControl>
       </div>
     </div>
   );

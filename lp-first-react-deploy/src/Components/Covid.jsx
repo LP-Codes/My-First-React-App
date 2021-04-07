@@ -3,8 +3,9 @@ import React from "react";
 // import styles from "./Covid.module.css";
 import Cards from "./Cards/Cards";
 // import Charts from "./Charts/Charts";
-import CountryPicker from "./CountryPicker/CountryPicker";
-
+// import CountryPicker from "./CountryPicker/CountryPicker";
+import img1 from "./Images/a8d866c87e75ae65af8a3f167ee1e8f6.gif"
+// import img2 from"./Images/word-covid-19-with-coronavirus-icon-2019-ncov-novel-coronavirus-concept-sign_149267-423.jpg"
 
 import { useEffect,useState } from "react";
 
@@ -38,10 +39,11 @@ export default function Covid() {
 
   return (
     <div className="container-fluid">
-        <h1 className="text-center alert-danger">Live Covid Tracker</h1>
+        <h1 className="text-center alert-danger font-weight-bolder"> Covid-19 Tracker <img src={img1} alt="" srcset=""  style={{height:"90px",width:"20%"}}/></h1>
+        
         {/* passing fetchedata as props */}
       <Cards data={fetcheddata} ></Cards>
-      <CountryPicker></CountryPicker>
+      {/* <CountryPicker></CountryPicker> */}
       {/* <Charts></Charts> */}
     </div>
   );
