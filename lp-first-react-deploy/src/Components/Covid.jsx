@@ -39,7 +39,7 @@ export default function Covid() {
 
   return (
     <div className="container-fluid">
-        <h1 className="text-center alert-danger font-weight-bolder"> Covid-19 Tracker <img src={img1} alt="" srcset=""  style={{height:"90px",width:"20%"}}/></h1>
+        <h1 className="text-center alert-danger font-weight-bolder"> Covid-19 Tracker <img src={img1} alt="" srcset=""  style={{height:"70px",width:"15%"}}/></h1>
         
         {/* passing fetchedata as props */}
       <Cards data={fetcheddata} ></Cards>

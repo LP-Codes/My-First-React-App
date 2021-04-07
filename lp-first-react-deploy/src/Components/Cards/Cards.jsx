@@ -96,12 +96,12 @@ export default function Cards(props) {
   return (
     <div>
       <div className="row m-2">
-        <div className="card11 col">
-          <div className="card-body ">
+        <div className="card11 col lp22">
+          <div className="card-body  ">
             <h4 className="card-title text-center text-capitalize alert-info ">
-              Total Infected
+              Total Infected <i class="fas fa-head-side-virus fa-2x"></i>
             </h4>
-            <p class="card-text text-center text-secondary font-weight-bolder ">
+            <p class="card-text text-center text-white font-weight-bolder">
               <CountUp
                 start={0}
                 end={active}
@@ -110,17 +110,17 @@ export default function Cards(props) {
               ></CountUp>
             </p>
 
-            <p className="text-center font-weight-bolder alert-dark">
+            <p className="text-center font-weight-bolder alert-info text-secondary">
               Last Updated - {updatetime}
             </p>
           </div>
         </div>
-        <div className="card11 col ml-2">
+        <div className="card11 col ml-2 lp22">
           <div className="card-body">
             <h4 className="card-title text-center text-capitalize alert-success">
-              Total Recovered
+              Total Recovery <i class="fas fa-heartbeat fa-2x"></i>
             </h4>
-            <p class="card-text text-center text-secondary font-weight-bolder">
+            <p class="card-text text-center text-white font-weight-bolder">
               {" "}
               <CountUp
                 start={0}
@@ -129,17 +129,17 @@ export default function Cards(props) {
                 separator=","
               ></CountUp>
             </p>
-            <p className="text-center font-weight-bolder alert-dark">
+            <p className="text-center font-weight-bolder alert-dark text-secondary">
               Last Updated - {updatetime}
             </p>
           </div>
         </div>
-        <div className="card11 col ml-2">
+        <div className="card11 col ml-2 lp22">
           <div className="card-body">
             <h4 className="card-title text-center text-capitalize alert-danger">
-              Total Deaths
+              Total Deaths <i class="far fa-dizzy fa-2x"></i>
             </h4>
-            <p class="card-text text-center text-secondary font-weight-bolder">
+            <p class="card-text text-center text-white font-weight-bolder">
               {" "}
               <CountUp
                 start={0}
@@ -148,7 +148,7 @@ export default function Cards(props) {
                 separator=","
               ></CountUp>
             </p>
-            <p className="text-center font-weight-bolder alert-dark">
+            <p className="text-center font-weight-bolder alert-dark text-secondary">
               Last Updated - {updatetime}
             </p>
           </div>
@@ -162,7 +162,7 @@ export default function Cards(props) {
         <FormControl className={classes.formControl}>
           <InputLabel id="demo-simple-select-label" className="font-weight-bold">Select Country</InputLabel>
           <Select
-            class="form-control font-weight-bold  mt-3"
+            class="form-control font-weight-bold  mt-3 alert-dark"
             id="sel1"
             onClick={checkselval}
             value={selectedcountry}
@@ -170,13 +170,13 @@ export default function Cards(props) {
             {contry.map((x, i) => {
               return (
                 <MenuItem
-                  className="alert-dark font-weight-bold "
+                  className="alert-dark font-weight-bold  "
                   value={x.name}
                   index={i}
                 >
                   <img
                     src={`https://www.countryflags.io/${x.iso2}/shiny/64.png`}
-                    alt=""
+                    alt="Flag"
                     style={{ backgroundColor: "lightblue" ,height:"90px"}}
                   /> 
                    {x.name} 
