@@ -1,3 +1,7 @@
+[![GitHub stars](https://img.shields.io/github/stars/LP-Codes/My-First-React-App?style=for-the-badge)](https://github.com/LP-Codes/My-First-React-App/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/LP-Codes/My-First-React-App?style=for-the-badge)](https://github.com/LP-Codes/My-First-React-App/issues)
+[![GitHub forks](https://img.shields.io/github/forks/LP-Codes/My-First-React-App?style=for-the-badge)](https://github.com/LP-Codes/My-First-React-App/network)
+
 # My-First-React-App
 A Sample App built using React having multiple tabs ,covers usage of fetch API, To-do App, Weather App,Covid tracker
 link  https://lp-codes.github.io/My-First-React-App/#/My-First-React-App/ of Live App I have tried to create using react, it might be useful for beginner's as a concept who are learning react .I have tried to cover react components such as routers ,hooks,useffect & using bootstrap,fontawesome,materialui ,api's with react -- There is basic home page with external media links , weather app, To-do-App with local storage & a Covid Tracker .Attaching some Snaps from link,
