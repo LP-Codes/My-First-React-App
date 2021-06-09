@@ -1,6 +1,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/LP-Codes/My-First-React-App?style=for-the-badge)](https://github.com/LP-Codes/My-First-React-App/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/LP-Codes/My-First-React-App?style=for-the-badge)](https://github.com/LP-Codes/My-First-React-App/issues)
 [![GitHub forks](https://img.shields.io/github/forks/LP-Codes/My-First-React-App?style=for-the-badge)](https://github.com/LP-Codes/My-First-React-App/network)
+![GitHub all releases](https://img.shields.io/github/downloads/LP-Codes/My-First-React-App/total?style=for-the-badge)
 
 # My-First-React-App
 A Sample App built using React having multiple tabs ,covers usage of fetch API, To-do App, Weather App,Covid tracker
